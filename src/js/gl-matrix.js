@@ -166,7 +166,7 @@
              */
             glMatrix.setMatrixArrayType = function(type) {
                 glMatrix.ARRAY_TYPE = type;
-            }
+            };
 
             var degree = Math.PI / 180;
 
@@ -177,7 +177,7 @@
              */
             glMatrix.toRadian = function(a){
                 return a * degree;
-            }
+            };
 
             /**
              * Tests whether or not the arguments have approximately the same value, within an absolute
@@ -190,7 +190,7 @@
              */
             glMatrix.equals = function(a, b) {
                 return Math.abs(a - b) <= glMatrix.EPSILON*Math.max(1.0, Math.abs(a), Math.abs(b));
-            }
+            };
 
             module.exports = glMatrix;
 
@@ -479,7 +479,7 @@
                 out[2] = -s;
                 out[3] = c;
                 return out;
-            }
+            };
 
             /**
              * Creates a matrix from a vector scaling
@@ -498,7 +498,7 @@
                 out[2] = 0;
                 out[3] = v[1];
                 return out;
-            }
+            };
 
             /**
              * Returns a string representation of a mat2
@@ -1546,7 +1546,7 @@
                 out[7] = v[1];
                 out[8] = 1;
                 return out;
-            }
+            };
 
             /**
              * Creates a matrix from a given angle
@@ -1574,7 +1574,7 @@
                 out[7] = 0;
                 out[8] = 1;
                 return out;
-            }
+            };
 
             /**
              * Creates a matrix from a vector scaling
@@ -1600,7 +1600,7 @@
                 out[7] = 0;
                 out[8] = 1;
                 return out;
-            }
+            };
 
             /**
              * Copies the values from a mat2d into a mat3
