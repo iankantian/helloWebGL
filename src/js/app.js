@@ -3,12 +3,10 @@ var gl;
 var initDemo = function () {
     loadTextResource( 'src/shader.vs.glsl', function ( vsErr, vsText ) {
         if ( vsErr ) {
-            alert( 'Fatal error getting vertex shader ( see console )' );
             console.error( vsErr );
         } else {
             loadTextResource( 'src/shader.fs.glsl', function ( fsErr, fsText ) {
                 if ( fsErr ) {
-                    alert( 'Fatal error getting fragment shader ( see console )' );
                     console.error( fsErr );
                 } else {
                     loadJSONResource( 'media/airplane.json', function ( modelErr, modelObj ) {
@@ -50,9 +48,7 @@ var runDemo = function ( vertexShaderText, fragmentShaderText, objImage, objMode
     gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT );
     gl.enable( gl.DEPTH_TEST );
     //gl.enable( gl.CULL_FACE );
-    gl.frontFace( gl.CCW );
-    gl.cullFace( gl.FRONT );
-    
+
     var vertexShader = gl.createShader( gl.VERTEX_SHADER );
     var fragmentShader = gl.createShader( gl.FRAGMENT_SHADER );
 
