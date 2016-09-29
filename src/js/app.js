@@ -150,7 +150,7 @@ var runDemo = function ( vertexShaderText, fragmentShaderText, objImage, objMode
     var viewMatrix = new Float32Array( 16 );
     var projMatrix = new Float32Array( 16 );
     mat4.identity( worldMatrix );
-    mat4.lookAt( viewMatrix, [0, 0, -4], [0, 0, 0], [0, 1, 0] );
+    mat4.lookAt( viewMatrix, [-4, 0, 0], [0, 0, 0], [0, 1, 0] );
     mat4.perspective( projMatrix, glMatrix.toRadian( 45 ), canvas.width / canvas.height, 0.1, 1000.0 );
 
     gl.uniformMatrix4fv( matWorldUniformLocation, gl.FALSE, worldMatrix );
@@ -167,9 +167,9 @@ var runDemo = function ( vertexShaderText, fragmentShaderText, objImage, objMode
     mat4.identity( identityMatrix );
     var angle = 0;
     var loop = function () {
-        angle = performance.now() / 1000 / 6 * 2 * Math.PI;
+        angle = performance.now() / 1000 / 12 * 2 * Math.PI;
         mat4.rotate( yRotationMatrix, identityMatrix, angle, [0, 1, 0] );
-        mat4.rotate( xRotationMatrix, identityMatrix, angle / 4, [1, 0, 0] );
+        mat4.rotate( xRotationMatrix, identityMatrix, angle / 2, [1, 0, 0] );
         mat4.mul( worldMatrix, yRotationMatrix, xRotationMatrix );
         gl.uniformMatrix4fv( matWorldUniformLocation, gl.FALSE, worldMatrix );
 
